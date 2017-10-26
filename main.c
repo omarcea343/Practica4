@@ -7,25 +7,20 @@ int main(){
 	scanf("%d",&dato); 
 	inf=0; 
 	sup=n; 
-	while (inf<=sup) 
-	{ 
+	while(inf<=sup){ 
 		mit=(inf+sup)/2; 
-		if (A[mit]==dato) 
-		{ 
+		if (A[mit]==dato){ 
 			printf("dato %d encontrado posicion %d",dato,mit); 
 			break; 
 		} 
-		if (A[mit]>dato) 
-		{ 
+		if (A[mit]>dato){ 
 			sup=mit; 
 			mit=(inf+sup)/2; 
 		} 
-		if (A[mit]<dato) 
-		{ 
+		if (A[mit]<dato){ 
 			inf=mit; 
 			mit=(inf+sup)/2; 
-		} 
-		
+		}
 	} 
 	return 0; 
 }
