@@ -1,2 +1,3 @@
 # Practica4
-Busqueda Binaria
+
+Metodo de Seleccion
