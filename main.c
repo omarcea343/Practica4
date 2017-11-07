@@ -1,25 +1,33 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-
-	int vector[7]={7,5,4,6,10,30,29};
-	int aux,menor,a;
+int main() {
+	int min, tmp; // elemento de menor peso y elemento temporal
+	int v[5] = { 99, 56, 34, 1, 12 };
+	int N = 5;
 	
-	for(int i=0;i<7-1;i++){
-		a=i;
-		//selecciona el menor
-		for(int j=i+1; j<7;j++)
-			
-			if (vector[j]<vector[a])
-				a = j;
-		aux=vector[i];
-		vector[i]=vector[a];
-		vector[a]=aux;
+	for (int a = 0; a < N; a++) {
+		printf("%d , ", v[a]);
 	}
 	
-	for(int k=0; k<7;k++){
-		printf("Los valores ordenados del vector son: ....\n [%d]\n",vector[k]);
-	}
+	/* recorremos todo el vector */
 	
+	for (int i = 0; i < N - 1; i++) {
+		/* suponemos que es el primero */
+		min = i;
+		/* recorremos la parte no ordenada */
+		for (int j = i + 1; j < N; j++) {
+			/* buscamos el de menor peso */
+			if (v[j] < v[min])
+				min = j;
+		}
+		/* intercambio posicion i por el de menor peso */
+		tmp = v[i];
+		v[i] = v[min];
+		v[min] = tmp;
+	}
+	printf("\n");
+	for (int a = 0; a < N; a++) {
+		printf("%d , ", v[a]);
+	}
 	return 0;
 }
