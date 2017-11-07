@@ -8,7 +8,7 @@ int main(){
 	
 	printf("Este programa ordena un vector por medio del metodo de seleccion: \n");
 	printf("\n");
-	printf("Vector a ordenar: \n\n");
+	printf("Vector a Ordenar: \n\n");
 	
 	for(a = 0; a < n; a++){
 		printf("\t %d", vector[a]);
