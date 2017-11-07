@@ -1,33 +1,38 @@
 #include <stdio.h>
+#define n 8
 
-int main() {
-	int min, tmp; // elemento de menor peso y elemento temporal
-	int v[5] = { 99, 56, 34, 1, 12 };
-	int N = 5;
+int main(){
 	
-	for (int a = 0; a < N; a++) {
-		printf("%d , ", v[a]);
+	int min, temp, i, j, a;
+	int vector[8] = {9, 21, 77, 8, 6, 4, 9, 55};
+	
+	printf("Este programa ordena un vector por medio del metodo de seleccion: \n");
+	printf("\n");
+	printf("Vector a ordenar: \n\n");
+	
+	for(a = 0; a < n; a++){
+		printf("\t %d", vector[a]);
 	}
 	
-	/* recorremos todo el vector */
-	
-	for (int i = 0; i < N - 1; i++) {
-		/* suponemos que es el primero */
+	for(i = 0; i < n; i++){
 		min = i;
-		/* recorremos la parte no ordenada */
-		for (int j = i + 1; j < N; j++) {
-			/* buscamos el de menor peso */
-			if (v[j] < v[min])
+		for(j = i + 1; j < n; j++){
+			if(vector[j] < vector[min]){
 				min = j;
+			}
 		}
-		/* intercambio posicion i por el de menor peso */
-		tmp = v[i];
-		v[i] = v[min];
-		v[min] = tmp;
+		temp = vector[i];
+		vector[i] = vector[min];
+		vector[min] = temp;
 	}
 	printf("\n");
-	for (int a = 0; a < N; a++) {
-		printf("%d , ", v[a]);
+	printf("\n");
+	printf("Vector Ordenado: \n");
+	printf("\n");
+	
+	for(a = 0; a < n; a++){
+		printf("\t %d", vector[a]);
 	}
+	
 	return 0;
 }
